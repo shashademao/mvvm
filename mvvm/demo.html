@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        #app{
+            width: 300px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id='app'>
+        <input type="text" v-model='num'>
+        <h1>{{num}}</h1>
+        <button v-click='decrease'>减少</button>
+        <button v-click='increase'>增加</button>
+    </div>
+    <script src='./observer.js'></script>
+    <script src='./watcher.js'></script>
+    <script src="./compile.js"></script>
+    <script src='./mvvm.js'></script>
+    <script type="text/javascript">
+        var vm=new Mvvm({
+            el:'#app',
+            data:{
+               num:100
+            },
+            methods:{
+                increase(){
+                    this.num++
+                },
+                decrease(){
+                    this.num--
+                }
+            }
+        })
+    </script>
+</body>
+</html>
